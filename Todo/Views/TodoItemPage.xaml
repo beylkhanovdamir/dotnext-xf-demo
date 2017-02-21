@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Todo.ViewModels;assembly=QuickTodo"
+             xmlns:todo="clr-namespace:Todo;assembly=QuickTodo"
+             x:Class="Todo.TodoItemPage" Title="{Binding Item.Name}">
+  <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+    <Label Text="Title" />
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="Auto"></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <Entry Text="{Binding Item.Name}" />
+      <Image Grid.Column="1" Source="microphone.png" Aspect="AspectFit">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer  Command="{Binding Path=AddItemBySpeakCommand}"></TapGestureRecognizer>
+        </Image.GestureRecognizers>
+      </Image>
+    </Grid>
+    <Label Text="Description" />
+    <Entry Text="{Binding Item.Notes}" HeightRequest="30"/>
+    <StackLayout IsVisible="{Binding Path=Item.ID, Converter={StaticResource CheckOnPositiveValueConverter}}">
+      <Label Text="Done?" />
+      <Switch IsToggled="{Binding Item.Done}" />
+    </StackLayout>
+    <Button Text="Save" Command="{Binding Path=SaveItemCommand, Mode=TwoWay}" />
+    <Button Text="Delete" TextColor="{StaticResource DeleteColor}" Command="{Binding Path=DeleteItemCommand}"
+            IsVisible="{Binding Path=Item.ID, Converter={StaticResource CheckOnPositiveValueConverter}}"/>
+    <Button Text="Cancel" Command="{Binding Path=CancelItemEditingCommand}" />
+  </StackLayout>
+</ContentPage>
