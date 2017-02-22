@@ -39,7 +39,7 @@
       <Switch IsToggled="{Binding Item.Done}" />
     </StackLayout>
     <Button Text="Save" Command="{Binding Path=SaveItemCommand, Mode=TwoWay}" />
-    <Button Text="Delete" TextColor="{StaticResource DeleteColor}" Command="{Binding Path=DeleteItemCommand}"
+    <Button Text="Delete" TextColor="{StaticResource DeleteColor}" Command="{Binding Path=DeleteCommand}"
             IsVisible="{Binding Path=Item.ID, Converter={StaticResource CheckOnPositiveValueConverter}}"/>
     <Button Text="Cancel" Command="{Binding Path=CancelItemEditingCommand}" />
   </StackLayout>
