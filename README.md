@@ -1,19 +1,14 @@
 Todo
 ====
 
-This sample demonstrates a Todo list application where the data is stored and accessed in a local SQLite database.
+Current Todo App is a forked MVVM-version of original Todo sample [xamarin-sample project](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo) with a list of new features such as - Commands&Data Binding, Messaging Center, Behaviors, Triggers, Styles and etc.
 
-The app functionality is:
+App functionality:
 
 - View a list of tasks.
 - Add a new item to the list of tasks.
-- Set a task's status to 'completed'.
+- Set a task's status to 'Done'.
 
-In all cases the tasks are stored in a local SQLite database.
-
-For more information about the sample see [Working with a Local Database](https://developer.xamarin.com/guides/xamarin-forms/working-with/databases/).
-
-Authors
+Author
 -------
-
-Craig Dunn, Bryan Costanich
+Damir Beylkhanov
