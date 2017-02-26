@@ -14,8 +14,8 @@
         <ColumnDefinition Width="*"></ColumnDefinition>
         <ColumnDefinition Width="Auto"></ColumnDefinition>
       </Grid.ColumnDefinitions>
-      <Entry Text="{Binding Item.Name}" Placeholder="Enter your task">
-      </Entry>
+      <todo:CustomEntry Text="{Binding Item.Name}" Placeholder="Enter your task">
+      </todo:CustomEntry>
       <Image Grid.Row="0" Grid.Column="1" Source="microphone.png" Aspect="AspectFit">
         <Image.GestureRecognizers>
           <TapGestureRecognizer  Command="{Binding Path=AddItemBySpeakCommand}"></TapGestureRecognizer>
@@ -33,7 +33,7 @@
       </Label>
     </Grid>
     <Label Text="Description" />
-    <Entry Text="{Binding Item.Notes}" HeightRequest="30"/>
+    <todo:CustomEntry Text="{Binding Item.Notes}" HeightRequest="30"/>
     <StackLayout IsVisible="{Binding Path=Item.ID, Converter={StaticResource CheckOnPositiveValueConverter}}">
       <Label Text="Done?" />
       <Switch IsToggled="{Binding Item.Done}" />
