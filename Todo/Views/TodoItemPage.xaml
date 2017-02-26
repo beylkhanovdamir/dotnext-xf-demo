@@ -15,6 +15,9 @@
         <ColumnDefinition Width="Auto"></ColumnDefinition>
       </Grid.ColumnDefinitions>
       <todo:CustomEntry Text="{Binding Item.Name}" Placeholder="Enter your task">
+        <todo:CustomEntry.Behaviors>
+          <todo:CustomBehavior></todo:CustomBehavior>
+        </todo:CustomEntry.Behaviors>
       </todo:CustomEntry>
       <Image Grid.Row="0" Grid.Column="1" Source="microphone.png" Aspect="AspectFit">
         <Image.GestureRecognizers>

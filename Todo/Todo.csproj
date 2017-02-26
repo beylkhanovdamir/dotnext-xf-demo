@@ -36,6 +36,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="CheckOnPositiveValueConverter.cs" />
+    <Compile Include="CustomBehavior.cs" />
     <Compile Include="CustomEntry.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
