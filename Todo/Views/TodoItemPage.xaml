@@ -3,6 +3,11 @@
              xmlns:viewModels="clr-namespace:Todo.ViewModels;assembly=QuickTodo"
              xmlns:todo="clr-namespace:Todo;assembly=QuickTodo"
              x:Class="Todo.TodoItemPage" Title="{Binding Item.Name}">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <todo:CheckOnPositiveValueConverter x:Key="CheckOnPositiveValueConverter"></todo:CheckOnPositiveValueConverter>
+    </ResourceDictionary>
+  </ContentPage.Resources>
   <StackLayout Margin="20" VerticalOptions="StartAndExpand">
     <Label Text="Title" />
     <Grid>
@@ -25,24 +30,24 @@
         </Image.GestureRecognizers>
       </Image>
       <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Task title is important" FontSize="10" IsVisible="False">
-        <Label.Triggers>
+        <!--<Label.Triggers>
           <DataTrigger TargetType="Label"
              Binding="{Binding Path=Item.Name, Mode=TwoWay}"
              Value="">
             <Setter Property="TextColor" Value="{StaticResource DeleteColor}" />
             <Setter Property="IsVisible" Value="True" />
           </DataTrigger>
-        </Label.Triggers>
+        </Label.Triggers>-->
       </Label>
     </Grid>
     <Label Text="Description" >
     </Label>
     <todo:CustomEntry Text="{Binding Item.Notes}" HeightRequest="30">
-      <Entry.Triggers>
+      <!--<Entry.Triggers>
         <Trigger TargetType="Entry" Property="IsFocused" Value="True">
           <Setter Property="BackgroundColor" Value="Gray" />
         </Trigger>
-      </Entry.Triggers>
+      </Entry.Triggers>-->
     </todo:CustomEntry>
     <StackLayout IsVisible="{Binding Path=Item.ID, Converter={StaticResource CheckOnPositiveValueConverter}}">
       <Label Text="Done?" />

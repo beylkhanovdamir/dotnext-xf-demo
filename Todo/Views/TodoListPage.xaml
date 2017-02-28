@@ -1,20 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:behaviors="clr-namespace:Corcav.Behaviors;assembly=Corcav.Behaviors"
              xmlns:viewModels="clr-namespace:Todo.ViewModels;assembly=QuickTodo"
+             xmlns:todo="clr-namespace:Todo;assembly=QuickTodo"
              x:Class="Todo.TodoListPage" Title="Todo">
-  <behaviors:Interaction.Behaviors>
-    <behaviors:BehaviorCollection>
-      <behaviors:EventToCommand EventName="Appearing" Command="{Binding LoadItemsCommand}" />
-    </behaviors:BehaviorCollection>
-  </behaviors:Interaction.Behaviors>
+  <ContentPage.Behaviors>
+      <todo:EventToCommandBehavior EventName="Appearing" Command="{Binding LoadItemsCommand}" />
+  </ContentPage.Behaviors>
   <ContentPage.ToolbarItems>
-    <ToolbarItem>
-      <behaviors:Interaction.Behaviors>
-        <behaviors:BehaviorCollection>
-          <behaviors:EventToCommand EventName="Clicked" Command="{Binding AddNewItemCommand}" />
-        </behaviors:BehaviorCollection>
-      </behaviors:Interaction.Behaviors>
+    <ToolbarItem  Command="{Binding AddNewItemCommand}">
       <ToolbarItem.Icon>
         <OnPlatform x:TypeArguments="FileImageSource" Android="plus.png" iOS="add_ios.png"/>
       </ToolbarItem.Icon>
@@ -22,11 +15,9 @@
   </ContentPage.ToolbarItems>
   <Grid>
     <ListView x:Name="listView" Margin="20" SelectedItem="{Binding Path=SelectedItem}" ItemsSource="{Binding Path=TodoItems}">
-      <behaviors:Interaction.Behaviors>
-        <behaviors:BehaviorCollection>
-          <behaviors:EventToCommand EventName="ItemSelected" Command="{Binding ItemSelectedCommand}" />
-        </behaviors:BehaviorCollection>
-      </behaviors:Interaction.Behaviors>
+      <ListView.Behaviors>
+        <todo:EventToCommandBehavior EventName="ItemSelected" Command="{Binding ItemSelectedCommand}" />
+      </ListView.Behaviors>
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
