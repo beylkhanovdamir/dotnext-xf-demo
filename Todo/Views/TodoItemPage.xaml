@@ -3,59 +3,46 @@
              xmlns:viewModels="clr-namespace:Todo.ViewModels;assembly=QuickTodo"
              xmlns:todo="clr-namespace:Todo;assembly=QuickTodo"
              x:Class="Todo.TodoItemPage" Title="{Binding Item.Name}">
-  <ContentPage.Resources>
-    <ResourceDictionary>
-      <todo:CheckOnPositiveValueConverter x:Key="CheckOnPositiveValueConverter"></todo:CheckOnPositiveValueConverter>
-    </ResourceDictionary>
-  </ContentPage.Resources>
-  <StackLayout Margin="20" VerticalOptions="StartAndExpand">
-    <Label Text="Title" />
-    <Grid>
-      <Grid.RowDefinitions>
-        <RowDefinition Height="*"></RowDefinition>
-        <RowDefinition Height="Auto"></RowDefinition>
-      </Grid.RowDefinitions>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="*"></ColumnDefinition>
-        <ColumnDefinition Width="Auto"></ColumnDefinition>
-      </Grid.ColumnDefinitions>
-      <todo:CustomEntry Text="{Binding Item.Name}" Placeholder="Enter your task">
-        <todo:CustomEntry.Behaviors>
-          <todo:CustomBehavior></todo:CustomBehavior>
-        </todo:CustomEntry.Behaviors>
-      </todo:CustomEntry>
-      <Image Grid.Row="0" Grid.Column="1" Source="microphone.png" Aspect="AspectFit">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer  Command="{Binding Path=AddItemBySpeakCommand}"></TapGestureRecognizer>
-        </Image.GestureRecognizers>
-      </Image>
-      <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Task title is important" FontSize="10" IsVisible="False">
-        <!--<Label.Triggers>
-          <DataTrigger TargetType="Label"
-             Binding="{Binding Path=Item.Name, Mode=TwoWay}"
-             Value="">
-            <Setter Property="TextColor" Value="{StaticResource DeleteColor}" />
-            <Setter Property="IsVisible" Value="True" />
-          </DataTrigger>
-        </Label.Triggers>-->
-      </Label>
-    </Grid>
-    <Label Text="Description" >
-    </Label>
-    <todo:CustomEntry Text="{Binding Item.Notes}" HeightRequest="30">
-      <!--<Entry.Triggers>
-        <Trigger TargetType="Entry" Property="IsFocused" Value="True">
-          <Setter Property="BackgroundColor" Value="Gray" />
-        </Trigger>
-      </Entry.Triggers>-->
-    </todo:CustomEntry>
-    <StackLayout IsVisible="{Binding Path=Item.ID, Converter={StaticResource CheckOnPositiveValueConverter}}">
-      <Label Text="Done?" />
-      <Switch IsToggled="{Binding Item.Done}" />
-    </StackLayout>
-    <Button Text="Save" Command="{Binding Path=SaveItemCommand, Mode=TwoWay}" />
-    <Button Text="Delete" TextColor="{StaticResource DeleteColor}" Command="{Binding Path=DeleteCommand}"
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<todo:CheckOnPositiveValueConverter x:Key="CheckOnPositiveValueConverter"></todo:CheckOnPositiveValueConverter>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<StackLayout Margin="20" VerticalOptions="StartAndExpand">
+		<Label Text="Title" />
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+				<ColumnDefinition Width="Auto"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<todo:CustomEntry Text="{Binding Item.Name}" Placeholder="Enter your task">
+				<todo:CustomEntry.Behaviors>
+					<todo:CustomBehavior></todo:CustomBehavior>
+				</todo:CustomEntry.Behaviors>
+			</todo:CustomEntry>
+			<Image Grid.Row="0" Grid.Column="1" Source="microphone.png" Aspect="AspectFit">
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer  Command="{Binding Path=AddItemBySpeakCommand}"></TapGestureRecognizer>
+				</Image.GestureRecognizers>
+			</Image>
+			<Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Task title is important" FontSize="10" IsVisible="False">
+			</Label>
+		</Grid>
+		<Label Text="Description" >
+		</Label>
+		<todo:CustomEntry Text="{Binding Item.Notes}" HeightRequest="30">
+		</todo:CustomEntry>
+		<StackLayout IsVisible="{Binding Path=Item.ID, Converter={StaticResource CheckOnPositiveValueConverter}}">
+			<Label Text="Done?" />
+			<Switch IsToggled="{Binding Item.Done}" />
+		</StackLayout>
+		<Button Text="Save" Command="{Binding Path=SaveItemCommand, Mode=TwoWay}" />
+		<Button Text="Delete" TextColor="{StaticResource DeleteColor}" Command="{Binding Path=DeleteCommand}"
             IsVisible="{Binding Path=Item.ID, Converter={StaticResource CheckOnPositiveValueConverter}}"/>
-    <Button Text="Cancel" Command="{Binding Path=CancelItemEditingCommand}" />
-  </StackLayout>
+		<Button Text="Cancel" Command="{Binding Path=CancelItemEditingCommand}" />
+	</StackLayout>
 </ContentPage>
