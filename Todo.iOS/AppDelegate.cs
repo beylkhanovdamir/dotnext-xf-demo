@@ -1,5 +1,8 @@
 using UIKit;
 using Foundation;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
@@ -15,6 +18,15 @@ namespace Todo
 
 			Forms.Init();
 			LoadApplication(new App());
+
+			UISleuth.Inspector.Init();
+
+			// Optional*
+			UISleuth.Inspector.ShowAcceptingConnections();
+
+			MobileCenter.Start("37ef0777-8c25-459e-95e9-19a9e5ae5220",
+				   typeof(Analytics), typeof(Crashes));
+
 			return base.FinishedLaunching(app, options);
 		}
 	}
