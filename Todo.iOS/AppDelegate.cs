@@ -24,9 +24,6 @@ namespace Todo
 			// Optional*
 			UISleuth.Inspector.ShowAcceptingConnections();
 
-			MobileCenter.Start("37ef0777-8c25-459e-95e9-19a9e5ae5220",
-				   typeof(Analytics), typeof(Crashes));
-
 			return base.FinishedLaunching(app, options);
 		}
 	}

@@ -20,9 +20,6 @@ namespace Todo
 
 			LoadApplication(new App());
 
-			MobileCenter.Start("e04e4274-9cd7-44fb-a984-70558d46eb82",
-				   typeof(Analytics), typeof(Crashes));
-
 			UISleuth.Inspector.Init();
 
 			// Optional*
