@@ -11,6 +11,7 @@
       <Color x:Key="primaryDarkGreen">#6FA22E</Color>
       <Color x:Key="DeleteColor">#FFD61510</Color>
       <Color x:Key="BaseBlueColor">#60A0FF</Color>
-    </ResourceDictionary>
+			<Color x:Key="ExtraLightGrayColor">#F5F5F5</Color>
+		</ResourceDictionary>
   </Application.Resources>
 </Application>

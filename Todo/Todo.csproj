@@ -43,6 +43,7 @@
     <Compile Include="EventToCommandBehavior.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShadowEffect.cs" />
     <Compile Include="ViewModels\TodoItemPageViewModel.cs" />
     <Compile Include="ViewModels\TodoListPageViewModel.cs" />
     <Compile Include="Views\TodoListPage.xaml.cs">
@@ -77,5 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Xamarin.iOS">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Xamarin.iOS\v1.0\Xamarin.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
