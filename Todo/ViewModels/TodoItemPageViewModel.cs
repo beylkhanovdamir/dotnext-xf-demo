@@ -20,6 +20,8 @@ namespace Todo.ViewModels
 
 		public TodoItem Item { get;set; }
 
+		public string PageTitle { get; set; }
+
 		public TodoItemPageViewModel()
 		{
 			DeleteCommand = new Command(async () => await DeleteItem());

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:Todo.ViewModels;assembly=QuickTodo"
              xmlns:todo="clr-namespace:Todo;assembly=QuickTodo"
-             x:Class="Todo.TodoItemPage" Title="{Binding Item.Name}">
+             x:Class="Todo.TodoItemPage" Title="{Binding PageTitle}">
 	<ContentPage.Resources>
 		<ResourceDictionary>
 			<todo:CheckOnPositiveValueConverter x:Key="CheckOnPositiveValueConverter"></todo:CheckOnPositiveValueConverter>

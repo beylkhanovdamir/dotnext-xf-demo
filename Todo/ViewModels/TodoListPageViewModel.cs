@@ -91,7 +91,7 @@ namespace Todo.ViewModels
 		{
 			await Application.Current.MainPage.Navigation.PushAsync(new TodoItemPage()
 			{
-				BindingContext = new TodoItemPageViewModel() { Item = new TodoItem() }
+				BindingContext = new TodoItemPageViewModel() { PageTitle = "Add new task", Item = new TodoItem() }
 			});
 		}
 
@@ -99,7 +99,7 @@ namespace Todo.ViewModels
 		{
 			await Application.Current.MainPage.Navigation.PushAsync(new TodoItemPage()
 			{
-				BindingContext = new TodoItemPageViewModel() { Item = SelectedItem }
+				BindingContext = new TodoItemPageViewModel() { PageTitle = SelectedItem.Name, Item = SelectedItem }
 			});
 		}
 
