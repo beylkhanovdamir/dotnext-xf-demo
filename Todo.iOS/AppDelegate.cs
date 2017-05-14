@@ -1,8 +1,6 @@
 using UIKit;
 using Foundation;
-using Microsoft.Azure.Mobile;
-using Microsoft.Azure.Mobile.Analytics;
-using Microsoft.Azure.Mobile.Crashes;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
