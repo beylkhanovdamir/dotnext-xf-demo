@@ -3,10 +3,10 @@
              xmlns:viewModels="clr-namespace:Todo.ViewModels;assembly=Todo"
              xmlns:todo="clr-namespace:Todo;assembly=Todo"
              x:Class="Todo.TodoListPage" Title="Todo">
-	<ContentPage.Behaviors>
-		<todo:EventToCommandBehavior EventName="Appearing" Command="{Binding LoadItemsCommand}" />
-	</ContentPage.Behaviors>
-	<ContentPage.ToolbarItems>
+    <ContentPage.Behaviors>
+        <todo:EventToCommandBehavior EventName="Appearing" Command="{Binding LoadItemsCommand}" />
+    </ContentPage.Behaviors>
+    <ContentPage.ToolbarItems>
 		<ToolbarItem  Command="{Binding AddNewItemCommand}">
 			<ToolbarItem.Icon>
 				<OnPlatform x:TypeArguments="FileImageSource" Android="plus.png" iOS="add_ios.png"/>
@@ -22,7 +22,7 @@
 				<DataTemplate>
 					<ViewCell>
 						<StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-							<Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                            <Label Text="{Binding Name, Converter={StaticResource StringToUpperConverter}}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
 							<Image Source="success.png" HorizontalOptions="End" IsVisible="{Binding Done}" />
 						</StackLayout>
 					</ViewCell>

@@ -5,9 +5,13 @@
              x:Class="Todo.App">
   <Application.Resources>
     <ResourceDictionary>
+        
+        
       <todo:CheckOnPositiveValueConverter x:Key="CheckOnPositiveValueConverter"></todo:CheckOnPositiveValueConverter>
 
-      <Color x:Key="primaryGreen">#91CA47</Color>
+            <todo:StringToUpperConverter x:Key="StringToUpperConverter"></todo:StringToUpperConverter>
+
+            <Color x:Key="primaryGreen">#91CA47</Color>
       <Color x:Key="primaryDarkGreen">#6FA22E</Color>
       <Color x:Key="DeleteColor">#FFD61510</Color>
       <Color x:Key="BaseBlueColor">#60A0FF</Color>
